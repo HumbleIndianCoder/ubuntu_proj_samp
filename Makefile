@@ -1,18 +1,24 @@
-#VPATH = src
+
 SRC_DIR = src
 OBJ_DIR = obj
 BIN_DIR = bin
 
 
+EXE := $(BIN_DIR)/main.exe
+SRC := $(wildcard $(SRC_DIR)/*.c)
+OBJ := $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
-all: main.exe
 
-main.exe: main.o
-	gcc -o main.exe main.o
 
-main.o: src/main.c
-	gcc -c src/main.c
+
+all: $(EXE)
+
+$(EXE): $(OBJ)
+	gcc $^ -o $@
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	gcc -c $< -o $@
 
 clean:
-	rm main.o main.exe
+	@$(RM) -rf $(BIN_DIR)/* $(OBJ_DIR)/*
 
