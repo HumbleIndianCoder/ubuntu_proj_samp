@@ -3,15 +3,13 @@
 
 int main(void) {
 
-	//printf(" Hello there! ");
-	int a,b;
+	//printf(" Hello there! This is the MAIN FUNCTION ");
 
-	printf(" \n Enter the 2 numbers to be added :   \n");
-	scanf("%d %d", &a, &b);
+	/* adding 2 numbers */
+	//add_2numbers();
 
-	int sum = add_2numbers(a,b);
-
-	printf(" \n Sum = %d \n\n",sum);
+	/* Read from a file & print it */
+	read_from_file();	
 
 	return 0;
 

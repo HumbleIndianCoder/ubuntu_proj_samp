@@ -1,12 +1,19 @@
 #include"../inc/header_files.h"
 
-int add_2numbers(int num1, int num2) {
+int add_2numbers() {
 
-	int result=0;
+	int num1, num2;
 
-	result = num1 + num2;
+        printf(" \n Enter the 2 numbers to be added :   \n");
+        scanf("%d %d", &num1, &num2);
 
-	return result;
 
+	int sum=0;
+
+	sum = num1 + num2;
+
+	printf(" \n Sum = %d \n\n",sum);
+
+	return 0;
 
 }
